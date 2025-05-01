@@ -1,0 +1,356 @@
+/* Home.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafb;
+  }
+  
+  /* Main container styling */
+  .home-container {
+    padding: 2rem;
+    background: linear-gradient(135deg, #f9f7ff, #f2f5fa);
+    min-height: 100vh;
+  }
+  
+  /* Header section */
+  .header-section {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .main-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: #4338ca;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon-container {
+    font-size: 3rem;
+    margin-right: 0.5rem;
+    animation: pulse 2s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  .subtitle {
+    color: #6b7280;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Statistics cards */
+  .stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .stat-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .stat-card h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-card p {
+    color: #6b7280;
+    margin: 0;
+  }
+  
+  .stat-card.total h3 {
+    color: #6366f1;
+  }
+  
+  .stat-card.fresh h3 {
+    color: #10b981;
+  }
+  
+  .stat-card.warning h3 {
+    color: #f59e0b;
+  }
+  
+  .stat-card.danger h3 {
+    color: #ef4444;
+  }
+  
+  /* Controls container */
+  .controls-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .search-box {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    font-size: 1rem;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .filter-btn:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .filter-btn.active {
+    background-color: #4f46e5;
+    color: white;
+  }
+  
+  /* Empty state */
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .empty-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+  }
+  
+  .empty-state p {
+    color: #6b7280;
+    font-size: 1.25rem;
+  }
+  
+  /* Items grid */
+  .items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  /* Item cards */
+  .item-card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
+    border-top: 5px solid #6366f1;
+  }
+  
+  .status-fresh-card {
+    border-top-color: #10b981;
+  }
+  
+  .status-warning-card {
+    border-top-color: #f59e0b;
+  }
+  
+  .status-expired-card {
+    border-top-color: #ef4444;
+  }
+  
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .item-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    color: #1f2937;
+  }
+  
+  .status-fresh {
+    color: #10b981;
+    font-weight: 600;
+  }
+  
+  .status-warning {
+    color: #f59e0b;
+    font-weight: 600;
+  }
+  
+  .status-expired {
+    color: #ef4444;
+    font-weight: 600;
+  }
+  
+  /* Progress bar */
+  .expiry-progress {
+    height: 6px;
+    background-color: #e5e7eb;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.5s ease-out;
+  }
+  
+  .item-details {
+    margin-bottom: 1rem;
+  }
+  
+  .item-details p {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+    color: #4b5563;
+  }
+  
+  .detail-icon {
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  /* Item actions */
+  .item-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .btn-edit, .btn-delete {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-edit {
+    color: #3b82f6;
+  }
+  
+  .btn-delete {
+    color: #ef4444;
+  }
+  
+  .btn-edit:hover, .btn-delete:hover {
+    background-color: #f3f4f6;
+  }
+  
+  /* Edit form */
+  .edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .edit-input {
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .btn-save {
+    background-color: #10b981;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .btn-save:hover {
+    background-color: #059669;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .stats-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .controls-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .search-box {
+      max-width: none;
+    }
+    
+    .filter-buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .stat-card h3 {
+      font-size: 2rem;
+    }
+    
+    .main-title {
+      font-size: 2rem;
+    }
+  }
